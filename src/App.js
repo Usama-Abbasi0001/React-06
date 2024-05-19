@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+import Hooks from './Hooks';
+import Collback from './Collback';
 
 function App() {
+  let [Counter, setCounter] = useState(1)
+
+  const addvalue = () => {
+    setCounter(Counter + 1 )
+  }
+  const removevalue = () => {
+    setCounter(Counter - 1 )
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <h1>Hooks In React</h1>
+     <h2>Counter Value : {Counter} </h2>
+     <button  onClick={addvalue}>Add Value </button> <br />
+     <button onClick={removevalue}>Remove Value</button>
+     <hr />
+     <Hooks />
+     <Collback />
+
+     </>
+    );
 }
 
 export default App;
